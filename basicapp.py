@@ -44,6 +44,7 @@ def composer3(x):
     # composer for degree 3, x is supposed to be 3 * unit shape
     W = tf.Variable(tf.random_normal([1, 3]), name="W_composer3")
     y = tf.matmul(W, x, name="y_composer3")
+    return y
 
 composers = [composer1, composer2, composer3]
 

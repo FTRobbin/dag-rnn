@@ -16,16 +16,14 @@ def write_graph():
 
 def gen_DAG(n=None, m=None, incap=3, lb=-10, ub=10, verbose=False):
     """ Random generate a DAG, the raw inputs and the outputs
-    Input:
-        n: number of vertices
-        m: number of edges
-        incap: maximum input degree
-        lb, ub: lower and upper bounds for input
-        verbose
-    Output:
-        vertices: (n, 2) narray as the input to all the vertices
-        edges: m ordered pairs represent the directed edges
-        output: (n, 2) narray as the output of all the vertices
+    :param n: number of vertices
+    :param m: number of edges
+    :param incap: maximum input degree
+    :param lb, ub: lower and upper bounds for input
+    :param verbose:
+    :return vertices: (n, 2) narray as the input to all the vertices
+    :return edges: m ordered paires represent the directed edges
+    :return output: (n, 2) narray as the ground truth output of all the vertices
     """
 
     # Vertices
@@ -45,8 +43,8 @@ def gen_DAG(n=None, m=None, incap=3, lb=-10, ub=10, verbose=False):
     if m > edge_ub:
         raise RuntimeError('Too many edges')
 
-    dgr = np.zeros(n, dtype=np.int) # input degrees
-    g = np.zeros((n, n), dtype=np.int) # connected edges
+    dgr = np.zeros(n, dtype=np.int)  # input degrees
+    g = np.zeros((n, n), dtype=np.int)  # connected edges
 
     edges = []
     for i in xrange(0, m):
