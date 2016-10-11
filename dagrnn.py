@@ -17,7 +17,7 @@ def assemble(composers, core):
     :param composers: an ordered list of callables that define the composer functions for nodes of different
                       input degrees. These functions are expected to take batch_size as the first dimension
     :param core: a callable that defines the core function. This function are expected to take batch_size as
-                 the first dimentsion. May support tf.nn.rnn_cell later
+                 the first dimension. May support tf.nn.rnn_cell later
     :return output: a tensor represents the output of the DAGRNN, its shape should be [#output_nodes, ...]
     """
     return tf.constant(0)
